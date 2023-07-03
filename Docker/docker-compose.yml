@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  pflanzenkisterl-panel:
+    image: nginx
+    working_dir: /usr/share/nginx/
+    privileged: true
+    network_mode: "host"
+    ports:
+      - "80:80"
+    volumes:
+      - ../Code:/usr/share/nginx/html/
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    tty: true
+    environment:
+      - XDG_RUNTIME_DIR=/tmp/.X11-unix

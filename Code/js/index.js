@@ -1,5 +1,5 @@
 let host = 'localhost';
-let port = 9001;
+let port = 8080;
 let topic = '#';
 let useTLS = false;
 let cleansession = true;
@@ -11,11 +11,9 @@ function MQTTconnect() {
     if (typeof path == "undefined") {
         path = '/';
     }
-    mqtt = new Paho.MQTT.Client(host, port, path, "mqtt_panel" + parseInt(Math.random() * 100, 10));
+    mqtt = new Paho.MQTT.Client(host, port, "pflanzenkisterlpanel");
     let options = {
         timeout: 3,
-        useSSL: useTLS,
-        cleanSession: cleansession,
         onSuccess: onConnect,
         onFailure: function (message) {
             $('#status').html("Connection failed: " + message.errorMessage + "Retrying...")
