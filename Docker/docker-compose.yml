@@ -9,7 +9,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ../Code:/usr/share/nginx/html/
+      - ../mqtt-interface/build:/usr/share/nginx/html/
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
     tty: true
     environment:
