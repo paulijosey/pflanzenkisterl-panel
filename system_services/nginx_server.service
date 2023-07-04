@@ -5,7 +5,7 @@ Requires=mosquito.service
 
 [Service]
 ExecStartPre=/bin/sleep 30
-ExecStart=docker-compose up /home/pi/git/pflanzenkisterl-panel/Docker/docker-compose.yml
+ExecStart=/usr/bin/docker-compose up /home/pi/git/pflanzenkisterl-panel/Docker/docker-compose.yml
 Type=simple
 Restart=always
 

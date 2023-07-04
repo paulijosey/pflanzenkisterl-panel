@@ -2,7 +2,7 @@
 Description=MQTT server
 
 [Service]
-ExecStart=mosquito -c /home/pi/git/pflanzenkisterl-panel/mosquito_conf/mosquito.conf
+ExecStart=/usr/bin/mosquito -c /home/pi/git/pflanzenkisterl-panel/mosquito_conf/mosquito.conf
 Type=simple
 Restart=always
 
