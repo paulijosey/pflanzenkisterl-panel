@@ -1,0 +1,13 @@
+[Unit]
+Description=Nginix server 
+After=mosquito.service
+Requires=mosquito.service
+
+[Service]
+ExecStartPre=/bin/sleep 30
+ExecStart=docker-compose up /home/pi/git/pflanzenkisterl-panel/Docker/docker-compose.yml
+Type=simple
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
